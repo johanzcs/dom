@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de DOM con Cuadros de Explicación</title>
+    <link rel="stylesheet" href="cajas.css"> 
+</head>
+<body>
+
+    <div class="caja">
+        <h2 class="titulo">Tema 1</h2>
+        <button onclick="mostrarExplicacion('explicacion1', 'Elemento por ID. Se usa innerHTML para cambiar el contenido del elemento.'); cambiarTextoById()">Explicar</button>
+        <div id="explicacion1" class="explicacion"></div>
+    </div>
+
+    <div class="caja">
+        <h2 class="titulo">Tema 2</h2>
+        <button onclick="mostrarExplicacion('explicacion2', 'Elemento por clase. Se usa textContent para cambiar el contenido del elemento.'); cambiarTextoByClassName()">Explicar</button>
+        <div id="explicacion2" class="explicacion"></div>
+    </div>
+
+    <div class="caja">
+        <h2 class="titulo">Tema 3</h2>
+        <button onclick="mostrarExplicacion('explicacion3', 'Elemento por etiqueta. Se usa innerText para cambiar el contenido del elemento.'); cambiarTextoByTagName()">Explicar</button>
+        <div id="explicacion3" class="explicacion"></div>
+    </div>
+
+    <div class="caja">
+        <h2 class="titulo">Tema 4</h2>
+        <button onclick="mostrarExplicacion('explicacion4', 'Elemento por querySelector. Se usa outerHTML para cambiar el contenido del elemento.'); cambiarTextoByQuerySelector()">Explicar</button>
+        <div id="explicacion4" class="explicacion"></div>
+    </div>
+
+    <script>
+        function mostrarExplicacion(explicacionId, texto) {
+            var explicacionDiv = document.getElementById(explicacionId);
+            explicacionDiv.innerHTML = texto;
+            explicacionDiv.style.display = 'block'; 
+            console.log("Se mostró explicación para: " + explicacionId);
+        }
+
+        function cambiarTextoById() {
+            var elemento = document.querySelector(".titulo"); 
+            elemento.innerHTML = "document.getElementById..."; 
+            console.log("cambiarTextoById: Título cambiado.");
+        }
+
+        function cambiarTextoByClassName() {
+            var elementos = document.getElementsByClassName("titulo");
+            if (elementos.length > 1) {
+                elementos[1].textContent = "getElementsByClassName"; 
+                console.log("cambiarTextoByClassName: Cambiado el texto en Ventana 2.");
+            }
+        }
+
+        function cambiarTextoByTagName() {
+            var elementos = document.getElementsByTagName("h2");
+            if (elementos.length > 2) { 
+                elementos[2].innerText = "document.getElementsByTagName..."; 
+                console.log("cambiarTextoByTagName: Cambiado el texto en Ventana 3.");
+            }
+        }
+
+        function cambiarTextoByQuerySelector() {
+            var elementos = document.querySelectorAll(".titulo"); 
+            if (elementos.length > 3) { 
+                elementos[3].innerHTML = "document.querySelector"; 
+                console.log("cambiarTextoByQuerySelector: Cambiado el texto en Ventana 4.");
+            } 
+        }
+    </script>
+</body>
+</html>
+
+
+

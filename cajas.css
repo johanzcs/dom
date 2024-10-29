@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif; 
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    margin: 20px;
+}
+
+.caja {
+    border: 10px solid #000;
+    padding: 25px;
+    margin: 15px;
+    width: 450px; 
+    height: 400px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    position: relative;
+    overflow: hidden; 
+    background-color: darkgoldenrod;
+}
+
+.explicacion {
+    border: 9px solid #7a16b4;
+    padding: 15px;
+    margin-top: 35px;
+    color: #000000;
+    display: none; 
+    overflow: auto; 
+    max-height: 100px; 
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+    height: 20%; 
+    box-sizing: border-box; 
+    background-color: darkseagreen;
+    font-size: 150%;
+}
